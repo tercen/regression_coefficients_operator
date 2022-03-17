@@ -42,5 +42,5 @@ df_out <- ctx %>%
 df_out %>%
   ctx$save()
 
-write.csv(df_out, "./tests/output.csv")
+write.csv(df_out, "./tests/output.csv", row.names = FALSE, quote = FALSE)
 
