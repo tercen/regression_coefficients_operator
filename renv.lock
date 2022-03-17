@@ -64,13 +64,6 @@
       "Repository": "RSPM",
       "Hash": "e75525c55c70e5f4f78c9960a4b402e9"
     },
-    "digest": {
-      "Package": "digest",
-      "Version": "0.6.27",
-      "Source": "Repository",
-      "Repository": "RSPM",
-      "Hash": "a0cbe758a531d054b537d16dff4d58a1"
-    },
     "dplyr": {
       "Package": "dplyr",
       "Version": "1.0.4",
@@ -204,6 +197,12 @@
       "Repository": "RSPM",
       "Hash": "6ea435c354e8448819627cf686f66e0a"
     },
+    "tim": {
+      "Package": "tim",
+      "Version": "0.0.3",
+      "Source": "unknown",
+      "Hash": "6c51b0cde0dd96a251400fdbbd1039af"
+    },
     "utf8": {
       "Package": "utf8",
       "Version": "1.1.4",
@@ -213,10 +212,10 @@
     },
     "vctrs": {
       "Package": "vctrs",
-      "Version": "0.3.6",
+      "Version": "0.3.8",
       "Source": "Repository",
-      "Repository": "RSPM",
-      "Hash": "5cf1957f93076c19fdc81d01409d240b"
+      "Repository": "CRAN",
+      "Hash": "ecf749a1b39ea72bd9b51b76292261f1"
     },
     "yaml": {
       "Package": "yaml",
