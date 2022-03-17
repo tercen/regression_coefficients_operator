@@ -13,11 +13,11 @@ get.coefficients <- function(df) {
   coefs[["log10_p_value"]] <- -log10(coefs[["p_value"]])
   coefs[[".ri"]] <- df[[".ri"]][1]
   
-  perc_var <- broom::tidy(anova(m)) %>% rename(covariate = term)
-  perc_var[["perc_variance"]] <- 100 * perc_var$sumsq / sum(perc_var$sumsq)
-  perc_var <- select(perc_var, perc_variance, covariate)
+  # perc_var <- broom::tidy(anova(m)) %>% rename(covariate = term)
+  # perc_var[["perc_variance"]] <- 100 * perc_var$sumsq / sum(perc_var$sumsq)
+  # perc_var <- select(perc_var, perc_variance, covariate)
   
-  df_out <- left_join(coefs, perc_var, "covariate")
+  df_out <- coefs# left_join(coefs, perc_var, "covariate")
   return(df_out)
 }
 
