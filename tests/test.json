@@ -9,5 +9,7 @@
   "colors": [],
   "labels": [],
   "yAxis": "measurement",
-  "xAxis": ""
+  "xAxis": "",
+  "equalityMethod": "R2",
+  "r2": 0.97
 }
