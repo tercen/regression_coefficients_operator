@@ -2,14 +2,15 @@ library(tercen)
 library(dplyr, warn.conflicts = FALSE)
 library(broom)
 
-options("tercen.workflowId" = "7132ce367ee5df28fea4032b3f011888")
-options("tercen.stepId"     = "426b00e4-b970-4042-9a53-93a10ac2da90")
+options("tercen.workflowId" = "53066da3b7f24fd4bb863c9131006c4d")
+options("tercen.stepId"     = "42536bcd-3422-4522-8473-d0de48c6c354")
 
 getOption("tercen.workflowId")
 getOption("tercen.stepId")
 
 get.coefficients <- function(df) {
   cov <- colnames(df)[!colnames(df) %in% c(".y", ".ri")]
+  cov <- paste0("`", cov, "`") # handles spaces in col names
   
   form <- paste0(".y ~ ", paste0(cov, collapse = " + "), " - 1")
   
@@ -21,7 +22,9 @@ get.coefficients <- function(df) {
   
   # perc_var <- broom::tidy(anova(m)) %>% rename(covariate = term)
   # perc_var[["perc_variance"]] <- 100 * perc_var$sumsq / sum(perc_var$sumsq)
-  # perc_var <- select(perc_var, perc_variance, covariate)
+  # perc_var[["negog10_p.value"]] <- -log10(perc_var[["p.value"]])
+  # #perc_var <- select(perc_var, perc_variance, covariate)
+  # perc_var[[".ri"]] <- df[[".ri"]][1]
   
   df_out <- coefs# left_join(coefs, perc_var, "covariate")
   return(df_out)

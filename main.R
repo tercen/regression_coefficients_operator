@@ -4,6 +4,7 @@ library(broom)
 
 get.coefficients <- function(df) {
   cov <- colnames(df)[!colnames(df) %in% c(".y", ".ri")]
+  cov <- paste0("`", cov, "`") # handles spaces in col names
   
   form <- paste0(".y ~ ", paste0(cov, collapse = " + "), " - 1")
   
@@ -15,11 +16,14 @@ get.coefficients <- function(df) {
   
   # perc_var <- broom::tidy(anova(m)) %>% rename(covariate = term)
   # perc_var[["perc_variance"]] <- 100 * perc_var$sumsq / sum(perc_var$sumsq)
-  # perc_var <- select(perc_var, perc_variance, covariate)
+  # perc_var[["negog10_p.value"]] <- -log10(perc_var[["p.value"]])
+  # #perc_var <- select(perc_var, perc_variance, covariate)
+  # perc_var[[".ri"]] <- df[[".ri"]][1]
   
   df_out <- coefs# left_join(coefs, perc_var, "covariate")
   return(df_out)
 }
+
 
 ctx = tercenCtx()
 
