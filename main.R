@@ -6,6 +6,7 @@ library(broom)
 
 get.coefficients <- function(df) {
   cov <- colnames(df)[!colnames(df) %in% c(".y", ".ri")]
+  cov <- paste0("`", cov, "`") # handles spaces in col names
   
   form <- paste0(".y ~ ", paste0(cov, collapse = " + "), " - 1")
   
@@ -19,9 +20,10 @@ get.coefficients <- function(df) {
   perc_var[["perc_variance"]] <- 100 * perc_var$sumsq / sum(perc_var$sumsq)
   perc_var <- select(perc_var, perc_variance, variable)
   perc_var[[".ri"]] <- df[[".ri"]][1]
-  
+
   return(list(coefs, perc_var))
 }
+
 
 ctx = tercenCtx()
 
