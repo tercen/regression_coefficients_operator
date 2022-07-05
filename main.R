@@ -4,6 +4,11 @@ library(dplyr, warn.conflicts = FALSE)
 library(purrr)
 library(broom)
 
+#library(tim)
+
+#options("tercen.workflowId" = "6015a4dd34cef273755e1a1b1500427b")
+#options("tercen.stepId"     = "c51e5178-b2ae-4bda-80c5-ab8ed2c1edff")
+
 get.coefficients <- function(df) {
   cov <- colnames(df)[!colnames(df) %in% c(".y", ".ri")]
   cov <- paste0("`", cov, "`") # handles spaces in col names
@@ -44,4 +49,9 @@ perc_var <- lapply(df_out, "[[", 2) %>%
   bind_rows() %>%
   ctx$addNamespace() 
 
-ctx$save(list(coefs, perc_var))
+df.out<-list(coefs, perc_var)
+
+ctx$save(df.out)
+
+#tim::build_test_data(res_table = df.out, ctx = ctx, test_name = "test1")
+
