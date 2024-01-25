@@ -1,10 +1,16 @@
 {
   "name": "Regression Coefficients",
   "description": "Compute regression coefficients for a set of covariates.",
-  "tags": ["linear regression"],
-  "authors": ["tercen"],
-  "urls": ["https://github.com/tercen/regression_coefficients_operator"],
+  "tags": [
+    "statistical testing",
+    "linear model",
+    "descriptive statistics"
+  ],
+  "authors": [
+    "tercen"
+  ],
+  "urls": [
+    "https://github.com/tercen/regression_coefficients_operator"
+  ],
   "properties": []
 }
-
-
