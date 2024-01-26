@@ -1,6 +1,6 @@
 {
   "name": "Regression Coefficients",
-  "description": "Compute regression coefficients for a set of covariates.",
+  "description": "Computes regression coefficients for a set of covariates.",
   "tags": [
     "statistical testing",
     "linear model",
